@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'storages',
 
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
@@ -198,3 +199,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# S3 configuration
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_FILE_OVERWRITE = False
+
+AWS_ACCESS_KEY_ID = 'AKIAQ2UDAD2NDVSFE45N'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'devsearch-bucket-cc'
